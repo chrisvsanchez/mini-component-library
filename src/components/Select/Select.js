@@ -31,6 +31,7 @@ const Wrapper = styled.div`
 
 const NativeSelect = styled.select`
   position: absolute;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -39,11 +40,20 @@ const NativeSelect = styled.select`
 `;
 const PresentationalBit = styled.div`
   color: ${COLORS.gray700};
+
   background-color: ${COLORS.transparentGray15};
   padding: 12px 16px;
   font-size: ${16 / 16}rem;
   padding-right: 52px;
   border-radius: 8px;
+  ${NativeSelect}:focus + & {
+    /* styles */
+    /* outline: 1px dotted #212121; */
+    outline: 5px auto -webkit-focus-ring-cornflowerblue;
+  }
+  ${NativeSelect}:hover + & {
+    color: ${COLORS.black};
+  }
 `;
 const IconWrapper = styled.div`
   position: absolute;
@@ -53,5 +63,6 @@ const IconWrapper = styled.div`
   margin: auto;
   width: var(--size);
   height: var(--size);
+  pointer-events: none;
 `;
 export default Select;
